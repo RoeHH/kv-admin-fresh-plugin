@@ -2,7 +2,7 @@ import denoKvAdmin from "./kv-admin.ts";
 import { HandlerContext, Plugin } from "$fresh/server.ts";
 import "https://deno.land/std@0.201.0/dotenv/load.ts";
 
-export const kvAdmin = Deno.env.get("DENO_DEPLOYMENT_ID") ? {} : {
+export const kvAdmin = Deno.env.get("DENO_DEPLOYMENT_ID") ? {name: "deactivated-kv-admin"} : {
   name: "kv-admin",
   routes: [
     {
